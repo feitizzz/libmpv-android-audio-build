@@ -115,7 +115,13 @@ build () {
  	sudo chmod +x $BUILDSCRIPT
 	[ $cleanbuild -eq 1 ] && $BUILDSCRIPT clean
     $BUILDSCRIPT build
+    local rc=$?
     popd
+    if [ $rc -ne 0 ]; then
+      printf >&2 '\e[1;31m%s failed with %s\e[m
+' "$1" "$rc"
+      exit $rc
+    fi
 }
 
 usage () {
