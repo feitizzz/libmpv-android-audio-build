@@ -159,6 +159,13 @@ cpuflags=
 	\
 	--enable-filter=overlay \
 	--enable-filter=equalizer \
+	# iMusic 音效第二档（均 LGPL）：bass/extrastereo/crossfeed/aecho/acompressor/alimiter
+	--enable-filter=bass \
+	--enable-filter=extrastereo \
+	--enable-filter=crossfeed \
+	--enable-filter=aecho \
+	--enable-filter=acompressor \
+	--enable-filter=alimiter \
 	\
 	--enable-protocol=async \
 	--enable-protocol=cache \
