@@ -48,3 +48,4 @@ jobs:
           files: |
             buildscripts/*.zip
             buildscripts/deps/media-kit-android-helper/app/build/outputs/apk/release/*.jar
+# build trigger
