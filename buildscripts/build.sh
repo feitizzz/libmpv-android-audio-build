@@ -120,6 +120,12 @@ build () {
     if [ $rc -ne 0 ]; then
       printf >&2 '\e[1;31m%s failed with %s\e[m
 ' "$1" "$rc"
+      for log in deps/$1/_build*/config.log deps/$1/config.log deps/$1/_build*/meson-logs/meson-log.txt; do
+        if [ -f "$log" ]; then
+          echo "===== $log (tail) =====" >&2
+          tail -n 80 "$log" >&2
+        fi
+      done
       exit $rc
     fi
 }
