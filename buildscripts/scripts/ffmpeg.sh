@@ -159,6 +159,8 @@ cpuflags=
 	\
 	--enable-filter=overlay \
 	--enable-filter=equalizer \
+	--enable-filter=aresample \
+	--enable-filter=aformat \
 	--enable-filter=bass \
 	--enable-filter=extrastereo \
 	--enable-filter=crossfeed \
