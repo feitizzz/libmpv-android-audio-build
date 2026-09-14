@@ -12,7 +12,7 @@ else
 	exit 255
 fi
 
-[ -f configure ] || ./autogen.sh
+[ -f configure ] || NOCONFIGURE=1 ./autogen.sh  # NOCONFIGURE：autogen 末尾会自跑 configure，交叉 CC 下必失败
 
 mkdir -p _build$ndk_suffix
 cd _build$ndk_suffix
