@@ -1,12 +1,10 @@
 #!/bin/bash -e
 # --------------------------------------------------
 
-if [ ! -f "deps" ]; then
-  sudo rm -r deps
-fi
-if [ ! -f "prefix" ]; then
-  sudo rm -r prefix
-fi
+# 原逻辑 [ ! -f deps ] 在目录不存在时对不存在的路径 rm，set -e 下必炸；
+# 本意是「存在就清掉」，改成目录判断
+[ -d deps ] && sudo rm -r deps
+[ -d prefix ] && sudo rm -r prefix
 
 ./download.sh
 ./patch.sh
